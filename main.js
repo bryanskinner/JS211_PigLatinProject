@@ -13,9 +13,46 @@ const rl = readline.createInterface({
 
 const pigLatin = (word) => {
 
-  // Your code here
+  word = word.trim().toLowerCase();
+
+  //* finding index of first vowel in string
+  const firstVowelIndex = word.search(/[a,e,i,o,u]/g);
+
+  //* grabbing the letters from the beggining of the word to the first vowel
+  const trimLetters = word.slice(0, firstVowelIndex);
+
+  //? console.log(trimLetters)
+  
+  //* grabbing the letter from the first vowels to the end of the word
+  const trimmedWord = word.slice(firstVowelIndex);
+  console.log(trimmedWord)
+  
+  //* if the index of the first vowel of the string is 0 we add yay to the end 
+  if (firstVowelIndex === 0) {
+    return `${trimmedWord}${trimLetters}yay`
+
+    //* if the index of the first vowel is not 0 we add ay
+  } else {
+    return `${trimmedWord}${trimLetters}ay`
+  }
+  
+
+
+  // let pigLatinWord = '';
+  // let firstLetter = word[0];
+  
+
+  // if (['a', 'e', 'i', 'o', 'u'].includes(firstLetter)) {
+  //   pigLatinWord = word + 'yay';
+  // } else {
+  //   let restOfWord = word.slice(1);
+  //   pigLatinWord = restOfWord + firstLetter + 'ay';
+  // }
+  
+  // return pigLatinWord;
 
 }
+
 
 // the first function called in the program to get an input from the user
 // to run the function use the command: node main.js
